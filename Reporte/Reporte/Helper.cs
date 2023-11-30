@@ -9,6 +9,7 @@ namespace Reporte
 {
     public static class Helper
     {
+
         public static string Conection(string name)
         {
             string res = string.Empty;

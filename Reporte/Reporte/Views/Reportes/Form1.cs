@@ -29,8 +29,12 @@ namespace Reporte
             if (compra != null)
             {
                 List<ComprasDetalle> detalle = DAOconn.GetComprasDetalleById(compra.CompraID);
+                if (detalle.Count <= 0)
+                    return;
+
                 using (frmPrint frmprint = new frmPrint())
                 {
+                    txbLog.Text += Environment.NewLine + $"Compra: {compra.CompraID} detalle: {detalle}";
                     frmprint.PrintCompra(compra, detalle);
                     frmprint.ShowDialog();
                 }
@@ -56,6 +60,7 @@ namespace Reporte
             List<Compras> compras = new List<Compras>();
             compras = DAOconn.GetComprasByRangeDate(dtDesde.DateTime.Date, dtHasta.DateTime.Date);
             gridControl.DataSource = compras;
+            txbLog.Text = "Total de registros recuperados: " + compras.Count.ToString();
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

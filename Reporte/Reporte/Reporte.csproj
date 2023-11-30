@@ -46,6 +46,7 @@
     <Reference Include="DevExpress.Data.v17.1" />
     <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v17.1.UI, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -93,23 +94,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompraReport.cs">
+    <Compile Include="Views\Reportes\CompraReport.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CompraReport.Designer.cs">
+    <Compile Include="Views\Reportes\CompraReport.Designer.cs">
       <DependentUpon>CompraReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\GraficasController.cs" />
-    <Compile Include="CrystalReport1.cs">
+    <Compile Include="Views\Reportes\CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="frmPrint.cs">
+    <Compile Include="Views\Reportes\frmPrint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrint.Designer.cs">
+    <Compile Include="Views\Reportes\frmPrint.Designer.cs">
       <DependentUpon>frmPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
@@ -122,16 +123,22 @@
     <Compile Include="Models\Compras.cs" />
     <Compile Include="Models\ComprasDetalle.cs" />
     <Compile Include="DATA\DAOConn.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Views\Reportes\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Views\Reportes\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Graficas\Orders.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Dashboards\DocumentMgrWidget1cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboards\DocumentMgrWidget1cs.Designer.cs">
+      <DependentUpon>DocumentMgrWidget1cs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Excel\ReadExcel1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,17 +164,23 @@
     <Compile Include="Views\Layouts\Ribbon1.Designer.cs">
       <DependentUpon>Ribbon1.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CompraReport.resx">
+    <Compile Include="Views\Usuarios\Administracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Usuarios\Administracion.Designer.cs">
+      <DependentUpon>Administracion.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\Reportes\CompraReport.resx">
       <DependentUpon>CompraReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
+    <EmbeddedResource Include="Views\Reportes\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Views\Reportes\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrint.resx">
+    <EmbeddedResource Include="Views\Reportes\frmPrint.resx">
       <DependentUpon>frmPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
@@ -183,6 +196,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Dashboards\DocumentMgrWidget1cs.resx">
+      <DependentUpon>DocumentMgrWidget1cs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Excel\ReadExcel1.resx">
       <DependentUpon>ReadExcel1.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,7 +211,12 @@
     <EmbeddedResource Include="Views\Layouts\Ribbon1.resx">
       <DependentUpon>Ribbon1.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <EmbeddedResource Include="Views\Usuarios\Administracion.resx">
+      <DependentUpon>Administracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -210,6 +231,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
